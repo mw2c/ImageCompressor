@@ -2,9 +2,17 @@
 import os
 import os.path
 import Image
+import platform
 
+strPlatform = platform.platform()
+if "Windows" in strPlatform:
+    command = 'pngquant.exe'
+elif "Darwin" in strPlatform:
+    command = './pngquant'
+else:
+    print "System not supported"
+    exit()
 outputFormat = '.png'
-command = 'pngquant.exe'
 commandParam = '**.png --ext .png --force --quality 65 --speed 1'
 
 currentPath = os.getcwd()
