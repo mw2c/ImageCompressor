@@ -33,5 +33,5 @@ for file in fileList:
                 print targetFile + ' is not a image file'
             except  Exception as e:
                 print e
-        os.system(command + ' ' + outputDir + commandParam)
+        os.system(command + ' \'' + outputDir + '\'' + commandParam)
 print 'Done'
